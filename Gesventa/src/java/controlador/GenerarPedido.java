@@ -94,6 +94,23 @@ public class GenerarPedido extends HttpServlet {
 				Font.ITALIC,                   // estilo
 				BaseColor.BLUE)));             // color       
         
+        documento.add(new Paragraph("  ", 
+				FontFactory.getFont("arial",   // fuente
+				50,                            // tamaño
+				Font.ITALIC,                   // estilo
+				BaseColor.WHITE)));             // color       
+        
+        
+        
+        
+        documento.add(new Paragraph("Se entregará en C/Alcalá 321 28047 Madrid", 
+				FontFactory.getFont("arial",   // fuente
+				12,                            // tamaño
+				Font.ITALIC,                   // estilo
+				BaseColor.ORANGE)));             // color       
+        
+        
+        
         documento.close();
         
         File path = new File("C:\\upload\\fichero.pdf");

@@ -65,7 +65,7 @@
                                 <img src="<%= request.getContextPath()+"/img/"+prod.getImagen() %>"
                                      width="90%" /></td>
                                 <td class="col-md-8"><input class="form-control" type="text" name="nom" value="<%= prod.getNombre() %>" readonly /></td>
-                                <td class="col-md-9"><input class="form-control" type="text" name="precio" value="<%= prod.getPrecio() %>" readonly /></td>
+                                <td style="text-align: right; " class="col-md-9"><input class="form-control" type="text" name="precio" value="<%= prod.getPrecio() %>" readonly /></td>
                                 <td class="col-md-3">
                                     <input class="form-control" type="number" name="cant" value="1" min="1" onclick="ImporteTotal()"/>
                                 </td>
