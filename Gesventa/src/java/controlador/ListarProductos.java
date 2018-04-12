@@ -45,6 +45,8 @@ public class ListarProductos extends HttpServlet {
                 sqlStr = "SELECT * FROM productos ORDER BY pvp";
         else if ( valor == 3 )
                 sqlStr = "SELECT * FROM productos ORDER BY pvp DESC";
+        else if ( valor == 4 )
+                sqlStr = "SELECT * FROM productos WHERE oferta=\"1\" ORDER BY pvp DESC";
                   
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -90,7 +92,7 @@ public class ListarProductos extends HttpServlet {
             dispatcher.forward(request, response); 
 
         } catch (Exception e) {   
-             out.println(e.getMessage());
+            out.println(e.getMessage());
         }
           
     }

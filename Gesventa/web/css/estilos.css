@@ -83,14 +83,14 @@ footer h1 { color: black; font-size: 1em; font-weight: bold; }
 #earth {
 
   position: absolute;
-  right: 90px;
+  right: 190px;
   top: 0px;
   z-index: 1;  
     
  /*   position: relative;  */
   width: 150px;
   height: 150px;
-  margin: 4em auto;
+  margin: 2em auto;
   background: url(../earthmap.jpg) 0 0 repeat;
   border-radius: 50%;  
   background-size: 310px;

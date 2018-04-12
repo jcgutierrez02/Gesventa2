@@ -63,7 +63,7 @@
                                 <td><input class="form-control" type="text" name="cod" value="<%= prod.getCod() %>" readonly /></td>
                                 <td>
                                 <img src="<%= request.getContextPath()+"/img/"+prod.getImagen() %>"
-                                     width="60%" height="10%" /></td>
+                                     width="90%" /></td>
                                 <td class="col-md-8"><input class="form-control" type="text" name="nom" value="<%= prod.getNombre() %>" readonly /></td>
                                 <td class="col-md-9"><input class="form-control" type="text" name="precio" value="<%= prod.getPrecio() %>" readonly /></td>
                                 <td class="col-md-3">
@@ -114,5 +114,3 @@
         
     </body>
 </html>
-
-https://www.lawebdelprogramador.com/foros/Java/1482577-Abrir-archivo-pdf-local-en-browser-a-traves-de-jsp.html

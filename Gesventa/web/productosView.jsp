@@ -48,6 +48,11 @@
                                     <% } else { %>
                                         <option value="3">Precio descendente</option>  
                                     <% } %>   
+                                    <% if ( valor == 4) { %>
+                                        <option value="4" selected>En oferta</option>
+                                    <% } else { %>
+                                        <option value="4">En oferta</option>  
+                                    <% } %>   
                                 </select>
                             </div>                      
                             <button type="submit" class="btn btn-primary" name="Enviar" value="Enviar">Enviar</button>
@@ -69,7 +74,7 @@
                         <div class="imagen_oferta">
               <%        } %>              
                             <span class="negrilla"><%= prod.getNombre() %></span><br/>
-                                <img src="<%= request.getContextPath()+"/img/"+prod.getImagen() %>"
+                                <img src="<%= request.getContextPath() + "/img/" + prod.getImagen() %>"
                                      width="80%" height="80%" />
                             <br/>
                             <div style="margin-top: 10px;">
