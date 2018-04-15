@@ -100,6 +100,7 @@ public class ModificarProducto extends HttpServlet {
                    String nombre = rset.getString("nom_prod");
                    Double precio = rset.getDouble("pvp");
                    String proveedor = rset.getString("prov");
+                   Integer stock = rset.getInt("stock");
                    String imagen = rset.getString("imagen");
                    Blob imagen2 = rset.getBlob("imagen2");
                    Integer catalogo = rset.getInt("cat");
@@ -120,7 +121,7 @@ public class ModificarProducto extends HttpServlet {
                    // Convierte un tipo BLOB de Mysql en un objeto de la clase Image
                    Image imgJava = javax.imageio.ImageIO.read(imagen2.getBinaryStream());
 
-                   producto = new Producto(codigo,nombre,precio,proveedor,imagen,imgJava,catalogo,oferta);              
+                   producto = new Producto(codigo,nombre,precio,proveedor,stock,imagen,imgJava,catalogo,oferta);              
                }
                
                // Cierre de recursos
@@ -178,6 +179,7 @@ public class ModificarProducto extends HttpServlet {
             String nombre = request.getParameter("nom_prod");
             Double precio = Double.parseDouble(request.getParameter("precio")); 
             String proveedor = request.getParameter("proveedores"); 
+            Integer stock = Integer.parseInt(request.getParameter("stock")); 
             Integer cod = Integer.parseInt(request.getParameter("cod")); 
             Integer catalogo = Integer.parseInt(request.getParameter("catalogos"));
             String oferta = request.getParameter("oferta");  
@@ -211,18 +213,19 @@ public class ModificarProducto extends HttpServlet {
                 Connection conn = DriverManager.getConnection(url, userName, password);
                
                 PreparedStatement stmt = conn.prepareStatement(
-                     "UPDATE Productos SET nom_prod=?, pvp=?, prov=?, imagen=?, imagen2=?, cat=?, oferta=? WHERE cod=?");
+                     "UPDATE Productos SET nom_prod=?, pvp=?, prov=?, stock=?, imagen=?, imagen2=?, cat=?, oferta=? WHERE cod=?");
                
                 // Realizar la modificación del producto
                 stmt.setString(1, nombre);
                 stmt.setDouble(2, precio);
                 stmt.setString(3, proveedor); 
-                stmt.setString(4, nombreArchivo); 
+                stmt.setInt(4, stock);
+                stmt.setString(5, nombreArchivo); 
                 if ( is != null )  // Si el stream existe modificar columna BLOB 
-                    stmt.setBlob(5, is);
-                stmt.setInt(6, catalogo);
-                stmt.setString(7, oferta); 
-                stmt.setInt(8, cod);
+                    stmt.setBlob(6, is);
+                stmt.setInt(7, catalogo);
+                stmt.setString(8, oferta); 
+                stmt.setInt(9, cod);
                
                 int filas = stmt.executeUpdate();
                
@@ -230,7 +233,7 @@ public class ModificarProducto extends HttpServlet {
                 stmt.close();
                 conn.close(); 
             
-                Producto producto = new Producto(cod,nombre,precio,proveedor,nombreArchivo,null,catalogo,oferta);
+                Producto producto = new Producto(cod,nombre,precio,proveedor,stock,nombreArchivo,null,catalogo,oferta);
                
                 // Almacenar datos del producto y lista simple con el proveedor del 
                 // producto seleccionado

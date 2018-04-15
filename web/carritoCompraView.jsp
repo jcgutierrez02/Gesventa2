@@ -37,7 +37,7 @@
               <%
                if ( carrito != null )  {
               %> 
-                <div style="width: 600px; margin-left:100px; ">
+                <div style="width: 600px; margin-left: 50px; ">
                     <a href="ListarProductos"><img style="float: right; " 
                                                src="img/carrito.png" width="5%" height="5%" title="Elegir otro"/></a>
                     <hr>
@@ -51,6 +51,7 @@
                                     <th>Precio</th>
                                     <th>Unidades</th>
                                     <th></th>
+                                    <th>En stock</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -70,6 +71,7 @@
                                     <input class="form-control" type="number" name="cant" value="1" min="1" onclick="ImporteTotal()"/>
                                 </td>
                                 <td><a href="CarritoCompra?cod=<%= prod.getCod() %>&tipo=2">Eliminar</a></td>
+                                <td class="col-md-9"><input class="form-control" type="text" name="stock" value="<%= prod.getStock() %>" readonly /></td>
                             </tr>                                             
                         <%
                             DecimalFormatSymbols separadoresPersonalizados = new DecimalFormatSymbols();
@@ -102,13 +104,14 @@
         <script>
            /* Función que actualiza el importe total de la compra */ 
            function ImporteTotal() {            
-                var Total = 0.0;
-                for (i=0; i<document.getElementById("mform").elements.namedItem("precio").length; i++) {
-                    var precio = document.getElementById("mform").elements.namedItem("precio")[i].value;
-                    var cantidad = document.getElementById("mform").elements.namedItem("cant")[i].value;
-                    Total += parseFloat(precio) * parseFloat(cantidad);
-                }
-                document.getElementById("total").innerHTML = "Total: " + Total.toFixed(2) + "€";      
+              var Total = 0.0;
+              for (i=0; i<document.getElementById("mform").elements.namedItem("precio").length; i++) {
+                  var precio = document.getElementById("mform").elements.namedItem("precio")[i].value;
+                  var cantidad = document.getElementById("mform").elements.namedItem("cant")[i].value;
+                //  var stock = document.getElementById("mform").elements.namedItem("stock")[i].value;
+                  Total += parseFloat(precio) * parseFloat(cantidad);
+              }
+              document.getElementById("total").innerHTML = "Total: " + Total.toFixed(2) + "€";      
            } 
         </script>    
         

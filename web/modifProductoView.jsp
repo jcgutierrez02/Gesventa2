@@ -22,7 +22,7 @@
         <jsp:include page="navegacion.jsp"></jsp:include>
        
         <div id="principal">  
-            <jsp:include page="menu.jsp"></jsp:include>
+           
             <article>
                 <div class="panel panel-success">    
                     <div class="panel-heading">
@@ -49,31 +49,35 @@
                             </div>                      
                         </div>                 
 
+                         <div class="form-group">
+                            <label for="proveedor" class="col-md-2 control-label"> Proveedor:</label>
+                            <div class="col-md-4">
+                                <%= request.getAttribute("salida") %>
+                            </div>
+                       
+                            <label for="catalogo" class="col-md-2 control-label"> Catálogo:</label>
+                            <div class="col-md-4">
+                                <%= request.getAttribute("salida2") %>
+                            </div>
+                        </div>         
+                                 
                         <div class="form-group">
                             <label for="precio" class="col-md-2 control-label"> Precio:</label>
                             <div class="col-md-3">
                                 <input type="text" class="form-control" name="precio" id="precio"  
                                   value="<%= prod.getPrecio() %>" placeholder="Dos decimales"/>
                             </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="proveedor" class="col-md-2 control-label"> Proveedor:</label>
-                            <div class="col-md-4">
-                                <%= request.getAttribute("salida") %>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="catalogo" class="col-md-2 control-label"> Catálogo:</label>
-                            <div class="col-md-4">
-                                <%= request.getAttribute("salida2") %>
-                            </div>
+                            
+                            <label for="stock" class="col-md-3 control-label"> Unidades Stock:</label>
+                            <div class="col-md-3">
+                                <input type="number" class="form-control" min="0" name="stock" id="stock"  
+                                    value="<%= prod.getStock() %>" />
+                            </div>      
                         </div>
                             
                         <div class="form-group">
                             <label for="oferta" class="col-md-2 control-label"> En oferta:</label>
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <%= request.getAttribute("salida3") %>
                             </div>
                         </div>         

@@ -9,6 +9,7 @@ public class Producto {
     private String nombre;
     private Double precio;
     private String proveedor;
+    private Integer stock;
     private String imagen;
     private Image imagen2;
     private Integer cat;
@@ -16,12 +17,12 @@ public class Producto {
 
     public Producto() { }
 
-    public Producto(Integer cod, String nombre, Double precio, String proveedor, String imagen, 
-            Image imagen2, Integer cat, String oferta) {
+    public Producto(Integer cod, String nombre, Double precio, String proveedor, Integer stock, String imagen, Image imagen2, Integer cat, String oferta) {
         this.cod = cod;
         this.nombre = nombre;
         this.precio = precio;
         this.proveedor = proveedor;
+        this.stock = stock;
         this.imagen = imagen;
         this.imagen2 = imagen2;
         this.cat = cat;
@@ -55,17 +56,17 @@ public class Producto {
     public String getProveedor() {
         return proveedor;
     }
-    
-    public Integer getCat() {
-        return cat;
-    }
-    
-    public String getOferta() {
-        return oferta;
-    }
 
     public void setProveedor(String proveedor) {
         this.proveedor = proveedor;
+    }
+
+    public Integer getStock() {
+        return stock;
+    }
+
+    public void setStock(Integer stock) {
+        this.stock = stock;
     }
 
     public String getImagen() {
@@ -75,20 +76,31 @@ public class Producto {
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
-      
+
     public Image getImagen2() {
         return imagen2;
     }
 
-    public void setImagen2(Image imagen) {
-      this.imagen2 = imagen2;
-    }   
-      
+    public void setImagen2(Image imagen2) {
+        this.imagen2 = imagen2;
+    }
+
+    public Integer getCat() {
+        return cat;
+    }
+
     public void setCat(Integer cat) {
-      this.cat = cat;
-    }     
-    
+        this.cat = cat;
+    }
+
+    public String getOferta() {
+        return oferta;
+    }
+
     public void setOferta(String oferta) {
-      this.oferta = oferta;
-    }     
+        this.oferta = oferta;
+    }
+    
+    
+
 }

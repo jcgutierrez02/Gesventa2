@@ -66,6 +66,7 @@ public class CarritoCompra extends HttpServlet {
                        Integer codigo = rset.getInt("cod");
                        String nombre = rset.getString("nom_prod");
                        Double precio = rset.getDouble("pvp");
+                       Integer stock = rset.getInt("stock");
                        String imagen = rset.getString("imagen");
                        Blob imagen2 = rset.getBlob("imagen2");
                        Integer catalogo = rset.getInt("cat");
@@ -73,7 +74,7 @@ public class CarritoCompra extends HttpServlet {
 
                        rpta = javax.imageio.ImageIO.read(imagen2.getBinaryStream());
                
-                       Producto producto = new Producto(codigo,nombre,precio,null,imagen,rpta,catalogo,oferta);
+                       Producto producto = new Producto(codigo,nombre,precio,null,stock,imagen,rpta,catalogo,oferta);
 
                        // Añadir el producto al carrito si no se ha añadido previamente
                        boolean existe = false;

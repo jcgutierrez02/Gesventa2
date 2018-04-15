@@ -65,6 +65,7 @@ public class ListarProductos extends HttpServlet {
                String nombre = rset.getString("nom_prod");
                Double precio = rset.getDouble("pvp");
                String proveedor = rset.getString("prov");
+               Integer stock = rset.getInt("stock");
                String imagen = rset.getString("imagen");
                Blob imagen2 = rset.getBlob("imagen2");
                Integer catalogo = rset.getInt("cat");
@@ -72,7 +73,7 @@ public class ListarProductos extends HttpServlet {
 
                rpta = javax.imageio.ImageIO.read(imagen2.getBinaryStream());
                             
-               Producto prod = new Producto(codigo,nombre,precio,proveedor,imagen,rpta,catalogo,oferta);
+               Producto prod = new Producto(codigo,nombre,precio,proveedor,stock,imagen,rpta,catalogo,oferta);
                if ( categoria == 0 || (categoria !=0 && categoria == catalogo) )   
                   productos.add(prod);
             }   
@@ -143,6 +144,7 @@ public class ListarProductos extends HttpServlet {
                String nombre = rset.getString("nom_prod");
                Double precio = rset.getDouble("pvp");
                String proveedor = rset.getString("prov");
+               Integer stock = rset.getInt("stock");
                String imagen = rset.getString("imagen");
                Blob imagen2 = rset.getBlob("imagen2");
                Integer catalogo = rset.getInt("cat");
@@ -150,7 +152,7 @@ public class ListarProductos extends HttpServlet {
 
                rpta = javax.imageio.ImageIO.read(imagen2.getBinaryStream());
                             
-               Producto prod = new Producto(codigo,nombre,precio,proveedor,imagen,rpta,catalogo,oferta);
+               Producto prod = new Producto(codigo,nombre,precio,proveedor,stock,imagen,rpta,catalogo,oferta);
                if ( categoria == 0 || (categoria !=0 && categoria == catalogo) )   
                   productos.add(prod);
             }   
