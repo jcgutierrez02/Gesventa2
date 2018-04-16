@@ -37,8 +37,8 @@
                     <li><a href="login.jsp"><span class="glyphicon glyphicon-user"></span> Login</a></li>
                     <li><a href="ListarProductosAdmin">Listar Productos</a></li>
                     <li><a href="AltaProductos">Alta Productos</a></li>
-                    <li><a href="ModificarProducto">Modificar Productos</a></li>
-                    <li><a href="EliminarProducto">Eliminar Productos</a></li>
+                    <li><a href="ListarProductosAdmin">Modificar Productos</a></li>
+                    <li><a href="ListarProductosAdmin">Eliminar Productos</a></li>
                     <li class="divider"></li> 
                     <li><a href="ListarProveedores">Proveedores</a></li>
                     <li><a href="AltaProveedores">Alta Proveedores</a></li>

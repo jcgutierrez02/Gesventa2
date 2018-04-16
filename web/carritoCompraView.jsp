@@ -28,7 +28,7 @@
                 <div class="panel panel-success"> 
                     <div class="panel-heading">
                         <h4>Carrito  
-                           <span style="float:right;">Conectado como <strong><%= session.getAttribute("user") %>
+                           <span style="float:right;">Conectado como <strong><%= session.getAttribute("registro") %>
                            </strong></span>                         
                         </h4>   
                     </div>  

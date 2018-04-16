@@ -80,12 +80,12 @@ public class ValidarRegistro extends HttpServlet {
             } 
            
             // Si el usuario es válido, crear la sesión y en caso contrario 
-            // regresar al login indicando mensaje de error.
+            // regresar al login2 indicando mensaje de error.
             if ( usuarioValido ) {          
                 HttpSession sesion  = request.getSession();
                 sesion.setMaxInactiveInterval(300) ;   // 5 min
              
-                sesion.setAttribute("user", name);
+                sesion.setAttribute("registro", name);
                 response.sendRedirect("ListarProductos");
             }
             else  

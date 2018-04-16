@@ -35,7 +35,7 @@ public class CarritoCompra extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        if ( request.getSession().getAttribute("user") == null ) {  // Si no existe una sesión ir a login2.jsp
+        if ( request.getSession().getAttribute("registro") == null ) {  // Si no existe una sesión ir a login2.jsp
             request.getRequestDispatcher("login2.jsp").include(request, response); 
             out.println("<p style=\"color:red; font-weight:bold\">");
             out.println("Para entrar debe autenticarse primero.</p>");

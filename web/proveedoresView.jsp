@@ -20,7 +20,7 @@
         <jsp:include page="navegacion.jsp"></jsp:include>
        
         <div class="row" id="principal">  
-            <jsp:include page="menu.jsp"></jsp:include> 
+            
             <article class="col-xs-12 col-sm-8">
                     <div class="panel panel-success"> 
                         <div class="panel-heading">

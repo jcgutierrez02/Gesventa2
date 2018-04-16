@@ -24,7 +24,14 @@
         <div class="row" id="principal">  
            
             <article class="col-xs-12 col-sm-8">
-                
+                <div class="panel panel-success"> 
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Productos</strong>
+                            <span style="float:right;">Conectado como <strong><%= session.getAttribute("registro") %>
+                                </strong></span>
+                        </h3>
+                    </div>
+                </div>   
                 <div class="row">
                     <form class="form-horizontal col-md-6" role="form" action="ListarProductos"
                                                     style="margin-left: 10px;" method="post">
