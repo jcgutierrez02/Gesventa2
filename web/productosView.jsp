@@ -27,8 +27,13 @@
                 <div class="panel panel-success"> 
                     <div class="panel-heading">
                         <h3 class="panel-title"><strong>Productos</strong>
+                        <%
+                            if ( session.getAttribute("registro") != null ) {
+                        %>    
                             <span style="float:right;">Conectado como <strong><%= session.getAttribute("registro") %>
                                 </strong></span>
+                        <% } 
+                        %>
                         </h3>
                     </div>
                 </div>   
